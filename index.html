@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudio de Arquitectura</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      min-height: 100vh;
+    }
+
+    .col {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .center {
+      flex: 2; /* más ancha */
+      position: relative;
+      overflow: hidden;
+      max-width: 900px;
+    }
+
+    .slideshow {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slideshow img {
+      width: 100%;
+      height: auto;
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 1s ease-in-out;
+      border-radius: 8px;
+    }
+
+    .slideshow img.active {
+      display: block;
+      opacity: 1;
+    }
+
+    .info {
+      padding: 60px 15%;
+      background-color: #fff;
+      text-align: center;
+      box-shadow: 0 -5px 10px rgba(0,0,0,0.1);
+    }
+
+    .info h2 {
+      margin-bottom: 20px;
+      font-size: 2em;
+      color: #222;
+    }
+
+    .info p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="col left">
+      <img src="logo.png" alt="Logo del estudio">
+    </div>
+
+    <div class="col center">
+      <div class="slideshow">
+        <img src="img1.jpg" class="active" alt="Proyecto 1">
+        <img src="img2.jpg" alt="Proyecto 2">
+        <img src="img3.jpg" alt="Proyecto 3">
+      </div>
+    </div>
+
+    <div class="col right">
+      <img src="decorativa.jpg" alt="Imagen decorativa">
+    </div>
+  </div>
+
+  <div class="info">
+    <h2>Sobre nuestro estudio</h2>
+    <p>
+      Somos un estudio de arquitectura dedicado al diseño contemporáneo, con un enfoque en la sostenibilidad, 
+      la funcionalidad y la integración del entorno. Nuestro equipo combina creatividad con precisión técnica 
+      para ofrecer soluciones únicas que transforman espacios y mejoran la vida de las personas.
+    </p>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slideshow img');
+    let index = 0;
+
+    function showNextSlide() {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }
+
+    setInterval(showNextSlide, 3000); // cambia cada 3 segundos
+  </script>
+
+</body>
+</html>
