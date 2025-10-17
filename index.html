@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estudio de Arquitectura</title>
+  <title>Guix Arquitectos</title>
   <style>
     * {
       box-sizing: border-box;
@@ -12,7 +12,7 @@
     }
 
     body {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-family: "Consolas", "Courier New", monospace;
       background-color: #f8f8f8;
       color: #333;
       overflow-x: hidden;
@@ -34,7 +34,7 @@
     }
 
     .center {
-      flex: 2; /* más ancha */
+      flex: 2;
       position: relative;
       overflow: hidden;
       max-width: 900px;
@@ -63,22 +63,16 @@
     }
 
     .info {
-      padding: 60px 15%;
+      padding: 80px 15%;
       background-color: #fff;
       text-align: center;
-      box-shadow: 0 -5px 10px rgba(0,0,0,0.1);
-    }
-
-    .info h2 {
-      margin-bottom: 20px;
-      font-size: 2em;
-      color: #222;
     }
 
     .info p {
       font-size: 1.1em;
-      line-height: 1.6;
-      color: #555;
+      line-height: 1.8;
+      color: #444;
+      white-space: pre-line; /* 🔹 respeta los saltos de línea */
     }
 
     img {
@@ -87,34 +81,54 @@
       border-radius: 8px;
     }
 
+    /* 🔹 Responsive para móviles */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .col {
+        width: 100%;
+        padding: 10px;
+      }
+      .center {
+        max-width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="container">
     <div class="col left">
-      <img src="logo.png" alt="Logo del estudio">
+      <img src="logo.png" alt="Guix Arquitectos Logo">
     </div>
 
     <div class="col center">
       <div class="slideshow">
-        <img src="img1.jpg" class="active" alt="Proyecto 1">
-        <img src="img2.jpg" alt="Proyecto 2">
-        <img src="img3.jpg" alt="Proyecto 3">
+        <img src="img1.jpg" class="active" alt="Project 1">
+        <img src="img2.jpg" alt="Project 2">
+        <img src="img3.jpg" alt="Project 3">
+        <img src="img4.jpg" alt="Project 4">
+        <img src="img5.jpg" alt="Project 5">
+        <img src="img6.jpg" alt="Project 6">
+        <img src="img7.jpg" alt="Project 7">
+        <img src="img8.jpg" alt="Project 8">
+        <img src="img9.jpg" alt="Project 9">
+        <img src="img10.jpg" alt="Project 10">
       </div>
     </div>
 
     <div class="col right">
-      <img src="decorativa.jpg" alt="Imagen decorativa">
+      <img src="decorativa.jpg" alt="Decorative image">
     </div>
   </div>
 
   <div class="info">
-    <h2>INFO</h2>
     <p>
-      Guix Arquitectos is a small architecture practices based in Tenerife.
-      Avda. de los Pescadores 10, 1º, 5A
-      38670, Adeje, S/C de Tenerife
+Guix Arquitectos is a small architecture practice based in Tenerife. 
+Avda. de los Pescadores 10, 1º, 5A 
+38670, Adeje, S/C de Tenerife
     </p>
   </div>
 
@@ -133,4 +147,3 @@
 
 </body>
 </html>
-
